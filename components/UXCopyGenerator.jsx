@@ -866,9 +866,6 @@ function AuditTab({ guidelines, saved, prd }) {
       <p style={{ fontFamily: SANS, fontSize: 19, color: C.secondary, margin: "0 0 24px", lineHeight: 1.6 }}>
         Paste any UI copy. Get a scored breakdown, a suggested rewrite, and a WCAG accessibility check.
       </p>
-       <div style={{ marginBottom: 16 }}>
-        <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
-      </div>
 <div style={{ marginBottom: 16 }}>
   <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
 </div>
@@ -883,9 +880,9 @@ function AuditTab({ guidelines, saved, prd }) {
           transition: "border-color 0.15s", marginBottom: 16,
         }}
       />
-      <Btn onClick={run} disabled={!imageFile && !copy.trim() || loading}>
-      </Btn>
-
+      <Btn onClick={run} disabled={(!imageFile && !copy.trim()) || loading}>
+  {loading ? "Auditing..." : "Run audit"}
+</Btn>
       {error && (
         <div style={{ marginTop: 16, padding: 14, background: C.errorDim, borderRadius: 8,
           fontFamily: SANS, fontSize: 16, color: C.error, border: `1px solid rgba(192,57,43,0.15)` }}>
