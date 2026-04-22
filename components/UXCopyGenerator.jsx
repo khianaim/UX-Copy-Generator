@@ -869,7 +869,7 @@ function AuditTab({ guidelines, saved, prd }) {
 
       <textarea value={copy} onChange={e => setCopy(e.target.value)}
         onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
-        placeholder="Paste the UI copy you want to audit..."
+        placeholder="Add context like moment in the journey, objective or user info."
         style={{
           width: "100%", minHeight: 110, padding: 18,
           background: C.surface, border: `1.5px solid ${focused ? C.accent : C.border}`,
