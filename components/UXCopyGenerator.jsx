@@ -1519,7 +1519,15 @@ export default function UXCopyGenerator() {
         <div style={{ maxWidth: 600, margin: "0 auto" }}>
           <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 16 }}>
             <img src="/logo.png" alt="UX Copy Generator" style={{ height: 24 }} />
-
+  {contextDone && tab !== "choose" && (
+              <button onClick={() => { setContextDone(false); setTab("context"); setSaved(false); }} style={{
+                background: "none", border: "none", padding: 0, cursor: "pointer",
+                fontFamily: SANS, fontSize: 14, color: C.secondary, fontWeight: 500,
+                textDecoration: "underline", textDecorationColor: C.borderMid, textUnderlineOffset: 3,
+              }}>
+                Edit guidelines
+              </button>
+            )}
           </div>
           <div style={{ display: "flex", gap: 0 }}>
             {tabs.map(({ id, label }) => (
