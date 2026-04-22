@@ -1104,7 +1104,7 @@ function GenerateTab({ guidelines, saved, prd, onResult, generateResult }) {
 
       <div style={{ display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
         <Btn onClick={run} disabled={!canRun || loading}>
-          {loading ? "Generating..." : "Generate copy"}
+          {loading ? "Generating..." : "Generate"}
         </Btn>
         {!saved && !loading && (
           <span style={{ fontFamily: SANS, fontSize: 19, color: C.subtle }}>
