@@ -864,7 +864,7 @@ function AuditTab({ guidelines, saved, prd }) {
         Audit copy
       </h2>
       <p style={{ fontFamily: SANS, fontSize: 19, color: C.secondary, margin: "0 0 24px", lineHeight: 1.6 }}>
-        Paste any UI copy. Get a scored breakdown, a suggested rewrite, and a WCAG accessibility check.
+        Upload any UI copy. Get a scored breakdown, a suggested rewrite, and a WCAG accessibility check.
       </p>
 <div style={{ marginBottom: 16 }}>
   <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
