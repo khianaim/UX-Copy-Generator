@@ -866,7 +866,12 @@ function AuditTab({ guidelines, saved, prd }) {
       <p style={{ fontFamily: SANS, fontSize: 19, color: C.secondary, margin: "0 0 24px", lineHeight: 1.6 }}>
         Paste any UI copy. Get a scored breakdown, a suggested rewrite, and a WCAG accessibility check.
       </p>
-
+       <div style={{ marginBottom: 16 }}>
+        <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
+      </div>
+<div style={{ marginBottom: 16 }}>
+  <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
+</div>
       <textarea value={copy} onChange={e => setCopy(e.target.value)}
         onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
         placeholder="Add context like moment in the journey, objective or user info."
@@ -875,26 +880,10 @@ function AuditTab({ guidelines, saved, prd }) {
           background: C.surface, border: `1.5px solid ${focused ? C.accent : C.border}`,
           borderRadius: 10, color: C.body, fontFamily: MONO, fontSize: 16,
           lineHeight: 1.75, resize: "vertical", outline: "none", boxSizing: "border-box",
-          transition: "border-color 0.15s", marginBottom: 12,
+          transition: "border-color 0.15s", marginBottom: 16,
         }}
       />
-
-      <div style={{ marginBottom: 16 }}>
-        {!showScreenshot && !imageFile ? (
-          <button onClick={() => setShowScreenshot(true)} style={{
-            background: "none", border: "none", padding: 0, cursor: "pointer",
-            fontFamily: SANS, fontSize: 16, color: C.secondary, textDecoration: "underline",
-            textDecorationColor: C.borderMid, textUnderlineOffset: 3,
-          }}>
-            + Add screenshot for visual context
-          </button>
-        ) : (
-          <ImageUpload imageFile={imageFile} setImageFile={setImageFile} imageBase64={imageBase64} setImageBase64={setImageBase64} />
-        )}
-      </div>
-
-      <Btn onClick={run} disabled={!copy.trim() || loading}>
-        {loading ? "Auditing..." : "Run audit"}
+      <Btn onClick={run} disabled={!imageFile && !copy.trim() || loading}>
       </Btn>
 
       {error && (
