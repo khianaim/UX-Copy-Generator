@@ -1,0 +1,4 @@
+node_modules
+.nextgit rm
+.DS_Store
+.env.local
